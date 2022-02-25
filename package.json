@@ -11,8 +11,24 @@
   "dependencies": {
     "vue": "^3.2.25"
   },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",
+    "eslint": "^8.9.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-vue": "^8.5.0",
     "husky": "^7.0.4",
     "vite": "^2.8.0"
   }
