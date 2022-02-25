@@ -4,6 +4,7 @@ module.exports = {
     node: true,
   },
   extends: [
+    'eslint:recommended',
     'plugin:vue/vue3-recommended',
   ],
   globals: {
@@ -74,7 +75,8 @@ module.exports = {
     curly: 'error',
     'default-case': 'error',
     'default-param-last': 'error',
-    'dot-location': 'error',
+    // dot必须和属性在同一行
+    'dot-location': ['error', 'property'],
     'dot-notation': [
       'error',
       {
@@ -141,7 +143,7 @@ module.exports = {
     'new-parens': 'error',
     'newline-after-var': 'off',
     'newline-before-return': 'off',
-    'newline-per-chained-call': 'off',
+    'newline-per-chained-call': ['error', { ignoreChainWithDepth: 1 }],
     'no-alert': 'error',
     'no-array-constructor': 'error',
     'no-await-in-loop': 'error',
@@ -237,7 +239,14 @@ module.exports = {
     'no-warning-comments': 'error',
     'no-whitespace-before-property': 'error',
     'nonblock-statement-body-position': 'error',
-    'object-curly-newline': 'error',
+    'object-property-newline': ['error', {
+      allowAllPropertiesOnSameLine: true,
+    }],
+    'object-curly-newline': ['error', {
+      multiline: true,
+      consistent: true,
+      minProperties: 2,
+    }],
     'object-curly-spacing': [
       'error',
       'always',
