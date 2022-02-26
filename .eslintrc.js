@@ -21,8 +21,8 @@ module.exports = {
   ],
   rules: {
     'import/extensions': ['error',
-      'never',
-      { vue: 'always' },
+      'always',
+      { js: 'never' },
     ],
     'accessor-pairs': 'error',
     'array-bracket-newline': 'off',
