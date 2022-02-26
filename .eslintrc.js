@@ -20,10 +20,7 @@ module.exports = {
     'import',
   ],
   rules: {
-    'import/extensions': ['error',
-      'always',
-      { js: 'never' },
-    ],
+    'import/extensions': ['error', 'always'],
     'accessor-pairs': 'error',
     'array-bracket-newline': 'off',
     'array-bracket-spacing': 'error',
