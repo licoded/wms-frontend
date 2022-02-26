@@ -20,7 +20,10 @@ module.exports = {
     'import',
   ],
   rules: {
-    'import/extensions': ['error', 'never'],
+    'import/extensions': ['error',
+      'never',
+      { vue: 'always' },
+    ],
     'accessor-pairs': 'error',
     'array-bracket-newline': 'off',
     'array-bracket-spacing': 'error',
