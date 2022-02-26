@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   env: {
     browser: true,
@@ -19,8 +21,21 @@ module.exports = {
     'vue',
     'import',
   ],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@', path.resolve(__dirname, 'src')],
+        ],
+        extensions: ['.js', '.jsx'],
+      },
+    },
+  },
   rules: {
-    'import/extensions': ['error', 'always'],
+    'import/extensions': ['error',
+      'always',
+      { js: 'never' },
+    ],
     'accessor-pairs': 'error',
     'array-bracket-newline': 'off',
     'array-bracket-spacing': 'error',
