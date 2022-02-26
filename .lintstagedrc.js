@@ -1,8 +1,8 @@
 module.exports = {
-  "*.js": [
+  "*.{js,jsx,vue}": [
     "eslint",
   ],
-  "*.vue": [
-    "eslint",
+  "*.{css,scss,vue}": [
+    "stylelint",
   ],
 };
