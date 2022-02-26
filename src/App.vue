@@ -1,11 +1,7 @@
 <script>
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
 
 export default defineComponent({
-  components: {
-    HelloWorld,
-  },
 });
 </script>
 
@@ -14,7 +10,7 @@ export default defineComponent({
     alt="Vue logo"
     src="./assets/logo.png"
   >
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <router-view />
 </template>
 
 <style>
