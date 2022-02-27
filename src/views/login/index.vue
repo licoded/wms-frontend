@@ -96,11 +96,19 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .container {
-  height: 100vh;
-  padding-top: 120px;
-  position: relative;
-  background: url("@/assets/images/cloud01.jpg") 0 bottom repeat-x  #049ec4;
-  animation: animate-cloud 20s linear infinite;
+  padding-top: 140px;
+
+  &::after {
+    z-index: -2;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url("@/assets/images/cloud01.jpg") 0 bottom repeat-x #049ec4;
+    animation: animate-cloud 20s linear infinite;
+  }
 }
 
 #content {
@@ -117,6 +125,7 @@ export default defineComponent({
 
   &::after,
   &::before {
+    z-index: -1;
     background: #f9f9f9;
     background: linear-gradient(top, rgb(248 248 248 / 100%) 0%, rgb(249 249 249 / 100%) 100%);
     border: 1px solid #c4c6ca;
@@ -124,19 +133,17 @@ export default defineComponent({
     display: block;
     height: 100%;
     left: -1px;
+    top: 0;
     position: absolute;
     width: 100%;
-    z-index: 2;
   }
 
   &::after {
-    transform: rotate(2deg);
-    top: 0;
+    transform: rotate(3deg);
   }
 
   &::before {
-    transform: rotate(-3deg);
-    top: 0;
+    transform: rotate(-4deg);
   }
 
   h1 {
@@ -167,7 +174,6 @@ export default defineComponent({
   }
 
   form {
-    z-index: 3;
     margin: 0 20px;
     position: relative;
 
