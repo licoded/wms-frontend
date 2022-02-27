@@ -1,10 +1,3 @@
 {
-  "language": "中文",
-  "login": {
-    "btn": "登录",
-    "forget": "忘记密码？",
-    "pwd": "密码",
-    "tip": "用户登录",
-    "username": "用户名"
-  }
+  "language": "中文"
 }

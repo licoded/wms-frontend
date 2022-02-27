@@ -1,10 +1,3 @@
 {
-  "language": "English",
-  "login": {
-    "btn": "Sign in",
-    "forget": "Forget Password?",
-    "pwd": "Password",
-    "tip": "Please sign in",
-    "username": "Username"
-  }
+  "language": "English"
 }

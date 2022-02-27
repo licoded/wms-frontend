@@ -43,13 +43,13 @@ export default defineComponent({
     <section id="content">
       <form target="_blank">
         <h1>
-          {{ t('login.tip') }}
+          {{ t('tip') }}
         </h1>
         <div>
           <input
             id="username"
             type="text"
-            :placeholder="t('login.username')"
+            :placeholder="t('username')"
             required=""
             value="root"
           >
@@ -58,7 +58,7 @@ export default defineComponent({
           <input
             id="password"
             type="password"
-            :placeholder="t('login.pwd')"
+            :placeholder="t('pwd')"
             required=""
             value="123"
           >
@@ -73,11 +73,11 @@ export default defineComponent({
         <div>
           <input
             type="button"
-            :value="t('login.btn')"
+            :value="t('btn')"
             class="btn btn-primary"
             onclick="login()"
           >
-          <a href="#">{{ t('login.forget') }}</a>
+          <a href="#">{{ t('forget') }}</a>
         </div>
       </form><!-- form -->
     </section><!-- content -->
@@ -259,3 +259,22 @@ export default defineComponent({
 }
 
 </style>
+
+<i18n>
+{
+  "zh-CN": {
+    "btn": "登录",
+    "forget": "忘记密码？",
+    "pwd": "密码",
+    "tip": "用户登录",
+    "username": "用户名",
+  },
+  "en-US": {
+    "btn": "Sign in",
+    "forget": "Forget Password?",
+    "pwd": "Password",
+    "tip": "Please sign in",
+    "username": "Username",
+  },
+}
+</i18n>
