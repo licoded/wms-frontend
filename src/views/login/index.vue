@@ -45,7 +45,8 @@ export default defineComponent({
         <h1>
           {{ t('tip') }}
         </h1>
-        <div>
+        <div class="input-wrapper">
+          <i class="iconfont icon-username" />
           <input
             id="username"
             type="text"
@@ -54,7 +55,8 @@ export default defineComponent({
             value="root"
           >
         </div>
-        <div>
+        <div class="input-wrapper">
+          <i class="iconfont icon-password" />
           <input
             id="password"
             type="password"
@@ -177,12 +179,23 @@ export default defineComponent({
     margin: 0 20px;
     position: relative;
 
+    .input-wrapper {
+      .iconfont {
+        position: absolute;
+        color: #bfbdbd;
+        font-size: 19px;
+        left: calc(19px + 5px);
+        height: 45px;
+        line-height: 45px;
+      }
+    }
+
     input[type="text"],
     input[type="password"] {
       border-radius: 3px;
       box-shadow: 0 1px 0 #fff, 0 -2px 5px rgb(0 0 0 / 8%) inset;
       transition: all 0.5s ease;
-      background: #eae7e7 url("../images/8bcLQqF.png") no-repeat;
+      background: #eae7e7;
       border: 1px solid #c8c8c8;
       color: #777;
       font: 13px Helvetica, Arial, sans-serif;
