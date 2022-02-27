@@ -94,22 +94,13 @@ export default defineComponent({
   </div>
 </template>
 
-<style lang="scss">
-html {
-  height: 100%;
-}
-
-body {
+<style lang="scss" scoped>
+.container {
+  height: 100vh;
+  padding-top: 120px;
+  position: relative;
   background: url("@/assets/images/cloud01.jpg") 0 bottom repeat-x  #049ec4;
   animation: animate-cloud 20s linear infinite;
-  width: 100%;
-  height: auto;
-}
-
-.container {
-  margin: 120px auto 0;
-  position: relative;
-  width: 900px;
 }
 
 #content {
@@ -135,18 +126,17 @@ body {
     left: -1px;
     position: absolute;
     width: 100%;
+    z-index: 2;
   }
 
   &::after {
     transform: rotate(2deg);
     top: 0;
-    z-index: -1;
   }
 
   &::before {
     transform: rotate(-3deg);
     top: 0;
-    z-index: -2;
   }
 
   h1 {
@@ -177,6 +167,7 @@ body {
   }
 
   form {
+    z-index: 3;
     margin: 0 20px;
     position: relative;
 
