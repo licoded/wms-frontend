@@ -71,12 +71,12 @@ td {
 }
 
 body {
-  background: #dcdddf;
-  color: #000;
   font-size: 14px;
   margin: 0 auto;
   padding: 0;
   position: relative;
+  font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 h1 { font-size: 28px; }
 h2 { font-size: 26px; }
@@ -95,8 +95,15 @@ small { font-size: 10px; }
 
 b,
 strong { font-weight: bold; }
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 .clearfix::after,
 form::after {
