@@ -4,8 +4,18 @@ import {
 
 const routes = [
   {
-    path: '/',
+    path: '/login',
     component: () => import('@/views/login/index.vue'),
+    meta: {
+      layout: false,
+    },
+  },
+  {
+    path: '/',
+    component: () => import('@/views/home/index.vue'),
+    meta: {
+      layout: true,
+    },
   },
 ];
 

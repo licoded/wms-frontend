@@ -1,6 +1,6 @@
 <template>
   <div class="layout-wrapper">
-    <slot />
+    Home
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'LayoutView',
+  name: 'HomePage',
   setup() {
     return {
     };
