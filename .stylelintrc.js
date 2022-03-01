@@ -5,5 +5,11 @@ module.exports = {
   ],
   "rules": {
     "function-linear-gradient-no-nonstandard-direction": null,
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "extends",
+        "tailwind",
+      ]
+    }],
   }
 }
