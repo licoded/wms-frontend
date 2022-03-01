@@ -65,14 +65,7 @@ export default defineComponent({
             value="123"
           >
         </div>
-        <div class="">
-          <span
-            id="errormessage"
-            class="help-block u-errormessage"
-            style="color: red;"
-          >&nbsp;</span>
-        </div>
-        <div>
+        <div class="form-btns">
           <input
             type="button"
             :value="t('btn')"
@@ -106,6 +99,7 @@ export default defineComponent({
     display: inline-block;
     position: absolute;
     top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
     background: url("@/assets/images/cloud01.jpg") 0 bottom repeat-x #049ec4;
@@ -190,8 +184,14 @@ export default defineComponent({
       }
     }
 
+    .form-btns {
+      display: flex;
+      justify-content: space-between;
+    }
+
     input[type="text"],
     input[type="password"] {
+      box-sizing: unset;
       border-radius: 3px;
       box-shadow: 0 1px 0 #fff, 0 -2px 5px rgb(0 0 0 / 8%) inset;
       transition: all 0.5s ease;
@@ -227,7 +227,6 @@ export default defineComponent({
       border: 1px solid #d69e31;
       color: #85592e;
       cursor: pointer;
-      float: left;
       font: bold 15px Helvetica, Arial, sans-serif;
       height: 35px;
       margin: 20px 0 35px 15px;
@@ -243,7 +242,6 @@ export default defineComponent({
 
     div a {
       color: #004a80;
-      float: right;
       font-size: 12px;
       margin: 30px 15px 0 0;
     }
