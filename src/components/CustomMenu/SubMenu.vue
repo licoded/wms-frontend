@@ -28,8 +28,9 @@
       />
     </div>
     <ul
-      v-show="show"
-      class="tw-px-5 tw-py-1"
+      class="tw-px-5
+        tw-overflow-hidden tw-transition-max-height tw-duration-500"
+      :class="[show ? 'tw-max-h-56' : 'tw-max-h-0']"
     >
       <slot />
     </ul>

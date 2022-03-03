@@ -1,7 +1,8 @@
 <template>
   <aside
     class="left-route tw-w-52 tw-pt-2.5 tw-relative
-      tw-border-solid tw-border-r-1 tw-border-mgrey-1"
+      tw-border-solid tw-border-r-1 tw-border-mgrey-1
+      tw-transition-all tw-duration-300"
     :style="sidebarStyle"
   >
     <Menu>

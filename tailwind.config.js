@@ -17,8 +17,13 @@ module.exports = {
         'mgrey-2': '#b6b7b8',
         'mgrey-3': '#a0a7b1',
         'mgrey-4': '#bcbcbc',
-        'blown-1': '#54232c',
+        'mblown-1': '#54232c',
+        'mblue-1': '#06c',
       },
+      transitionProperty: {
+        height: 'height',
+        'max-height': 'max-height',
+      }
     }
   },
   plugins: [],
