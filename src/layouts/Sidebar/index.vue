@@ -3,7 +3,7 @@
     class="left-route tw-w-52 tw-pt-2.5 tw-relative
       tw-border-solid tw-border-r-1 tw-border-mgrey-1
       tw-transition-all tw-duration-300"
-    :style="sidebarStyle"
+    :style="collaspeState.sidebarStyle"
   >
     <Menu>
       <SubMenu
@@ -29,12 +29,13 @@
           tw-top-1/2 -tw-right-0
           tw-translate-x-full -tw-translate-y-1/2"
       :style="collaspeWrapperStyle"
-      @click="collaspeTrigger()"
+      @click="handleCollaspe()"
     >
       <i
         class="iconfont icon-triangle-left
             -tw-ml-4"
         :style="collaspeIconStyle"
+        :class="collaspeState.classes"
       />
     </div>
   </aside>
@@ -48,6 +49,27 @@ import Menu from '@/components/CustomMenu/Menu.vue';
 import SubMenu from '@/components/CustomMenu/SubMenu.vue';
 import MenuItem from '@/components/CustomMenu/MenuItem.vue';
 import { useElementHover, useCycleList } from '@vueuse/core';
+
+function useCollaspe() {
+  const collaspeList = [
+    {
+      sidebarStyle: {},
+      iconClasses: '',
+    },
+    {
+      sidebarStyle: { marginLeft: '-13rem' },
+      iconClasses: 'tw-origin-center tw-rotate-180',
+    },
+  ];
+  const {
+    state: collaspeState,
+    next: handleCollaspe,
+  } = useCycleList(collaspeList);
+  return {
+    handleCollaspe,
+    collaspeState,
+  };
+}
 
 export default {
   name: 'SidebarView',
@@ -79,18 +101,11 @@ export default {
       collaspeWrapperStyle,
       collaspeIconStyle,
     });
-    const {
-      state: sidebarStyle,
-      next: collaspeTrigger
-    } = useCycleList([{}, { marginLeft: '-13rem' }], {
-      initial: false,
-      reverse: true,
-    });
+
     return {
       ...toRefs(state),
       collaspeElem,
-      sidebarStyle,
-      collaspeTrigger,
+      ...useCollaspe(),
     };
   },
 };
