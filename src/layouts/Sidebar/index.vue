@@ -48,28 +48,13 @@ import {
 import Menu from '@/components/CustomMenu/Menu.vue';
 import SubMenu from '@/components/CustomMenu/SubMenu.vue';
 import MenuItem from '@/components/CustomMenu/MenuItem.vue';
-import { useElementHover, useCycleList } from '@vueuse/core';
+import { useElementHover } from '@vueuse/core';
+import { useMultiplyCycleList } from '@/composables/mutiplyCycleList';
 
-function useCollaspe() {
-  const collaspeList = [
-    {
-      sidebarStyle: {},
-      iconClasses: '',
-    },
-    {
-      sidebarStyle: { marginLeft: '-13rem' },
-      iconClasses: 'tw-origin-center tw-rotate-180',
-    },
-  ];
-  const {
-    state: collaspeState,
-    next: handleCollaspe,
-  } = useCycleList(collaspeList);
-  return {
-    handleCollaspe,
-    collaspeState,
-  };
-}
+const defaultOptions = {
+  sidebarStyle: [{}, { marginLeft: '-13rem' }],
+  iconClasses: ['', 'tw-origin-center tw-rotate-180'],
+};
 
 export default {
   name: 'SidebarView',
@@ -102,10 +87,16 @@ export default {
       collaspeIconStyle,
     });
 
+    const {
+      state: collaspeState,
+      next: handleCollaspe,
+    } = useMultiplyCycleList(defaultOptions);
+
     return {
       ...toRefs(state),
       collaspeElem,
-      ...useCollaspe(),
+      collaspeState,
+      handleCollaspe,
     };
   },
 };
